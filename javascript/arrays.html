@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = new Array(3);
+        let nums = new Array(1, '张三', true, {
+            email: "test@163.com"
+        });
+        console.log(nums);
+        //数组给定长度,小于数组的长度的话会截取指定长度的数组,移除末尾元素
+        nums.length = 3;
+        console.log(nums);
+        //arr指定在指定下标指定元素,那么数组的长度就会增加
+        nums[99] = 10;
+        console.log(nums.length);
+
+        /**
+            数组的栈方法
+                1.push() 在数组的最后增加元素,返回数组的新长度
+                2.unshift() 在数组的最前边添加元素,返回数组的新长度
+                3.pop()   删除数组中的最后一个元素,返回被删除的那个元素
+                4.shift() 删除数组中的第一个元素,返回被删除的那个元素
+        **/
+        arr.push('blue');
+        console.log(arr);
+        console.log(arr.length);
+
+        let arrAdd = arr.unshift("red", "yellow");
+        console.log(arrAdd);
+        arr.forEach(doc => console.log(doc));
+
+        console.log(arr.pop());
+        console.log(arr.shift());
+        console.clear(arr);
+    </script>
+    <script>
+        /**
+            数组的转换方法
+            arrObject.join(separator) 不指定分隔符默认使用逗号分割
+            用于把数组中所有元素放入一个字符串
+            返回值:字符串
+
+            数组按下表元素位置倒置
+            StringObject.reverse()
+            功能
+            用于颠倒数组中元素的顺序
+            返回值:数组
+
+            数组元素按顺序排序
+            arrayObjects.sort(sortby)
+            返回值:数组
+            会将排序的数组元素全部转换为字符串,按字符串第一个字符的大小进行排序
+            可以传递一个比较函数,对数值类型进行元素进行排序
+            
+        */
+        let arr1 = [1, 2, 3, 4];
+        // let str = arr1.join('/');
+        // let str = arr1.join();
+        let str = arr1.join('');
+        console.log('转换后:\r\n类型:' + typeof (str) + '\r\n字符串:' + str);
+
+        //reverse    
+        console.log(arr1.reverse());
+        let strs = ['a', 'b', 'c', 'd']
+        console.log(strs.reverse().join('-'));
+        console.clear(strs, str);
+
+        //sort
+        let willSortArr1 = ['color', 'left', 'border'];
+        let willSortArr2 = [12, 15, 19, 20, 1, 8];
+        let sortArrs = willSortArr2.sort(); //字符串按单词的首字母进行排序
+        let sortNumArrs = willSortArr2.sort((x, y) => x - y); //升序
+        console.log(sortNumArrs);
+    </script>
+
+
+<script>
+        /**
+            arrayObject.concat(arrayX,arrayX,...)
+            用于连接两个或多个数组
+            返回值:数组
+        */
+        let arrDemo1 = [1,2,3,4],
+        arrDemo2 = ['color', 'left', 'border'],
+        arrDemo3;
+
+        //将arrDemo1和arrDemo2两个数组连接起来,用demo3接收
+        arrDemo3 = arrDemo1.concat(arrDemo2);
+        // arrDemo3 = [6,7,8,9];
+        // let concatArrs = arrDemo1.concat(arrDemo2,arrDemo3);
+        console.log(arrDemo3);
+
+        /**
+            arrayObject.slice(start,end)
+            从已有的数组中返回指定的元素
+            返回:数组
+        */
+        let colors = ['red','yellow','green','blue','orange'];
+        //从指定下标截取到数组末尾
+        console.log(colors.slice(1));
+        //从下标为1的元素截取到下标为2的元素
+        console.log(colors.slice(1,3));
+        //参数给负数的截取,用参数长度减去负数,就是截取的范围(2,3)
+        console.log(colors.slice(-3,3));
+        console.clear(colors);
+
+        /**
+            面试题
+            完成以下代码段,实现b数组对a数组的拷贝,方法越多越好
+            var a = [1,"yes",3],b
+        */
+        var a = [1,"yes",3],b;
+        //方法1
+        // b = a.concat();   
+        // b = [].concat(a);
+        //方法2
+        // b = a.slice(0);  
+        // b = a.slice();  
+        //方法3
+        // b = [];
+        // a.forEach(ele => b.push(ele));   
+
+        console.log(b);
+    </script>
+
+    <script>
+        /**
+         *  splice删除元素
+         *  arrayObject.splice(index,count)
+         *  删除从index开始,count个元素
+            返回值:被删的元素的数组 
+         */
+        let arrDel = new Array(1,2,3,4);
+        arrDel.slice(1,2).forEach(i => console.log(i));
+        console.log('=========================')
+        //不设置count,则删除从index开始的所有值
+        arrDel.slice(1).forEach(i => console.log(i));
+        console.log('=========================')
+        //count设置为0则不会删除元素
+        arrDel.slice(1,0).forEach(i => console.log(i));
+        console.log('=========================')
+        console.clear(arrDel);
+        /**
+            splice插入元素
+            arrayObject.splice(index,0,item1,...,itemx)
+            在指定位置插入值
+            参数:index
+            0:要删除的参数
+            item1...itemx:要插入的项
+            返回值:原始数组中被删除的元素(如果没有删除任何项,则返回空数组)
+        */
+        //在下标为1的位置插入元素
+        let arrDel2 = new Array(1,2,3,4);
+        console.log(arrDel2);
+        arrDel2.splice(1,0,'2','2');
+        console.log(arrDel2);
+        console.clear(arrDel2);
+        /**
+            splice替换 
+        */
+        let arrDel3 = new Array(1,2,3,4);
+        arrDel3.splice(0,2,5,6);
+        console.log(arrDel3);
+        console.clear(arrDel3);
+    </script>
+
+    <script>
+        /**
+            arrayObject.indexOf(searchvalue,startIndex)
+            从数组的开头开始向后查找
+            参数:searchvalue: 必须,要查找的项
+                startindex: 可选,起点位置的索引
+            返回值:
+                number,第一个查找的项在数组中的位置,没有找到的情况下返回-1
+        */
+        let searchArr = [1,2,3,4,5,5,{name:"张三"},"张三"];
+        
+        //ECMAScript5新增的,IE9以上才支持
+        console.log(searchArr.indexOf("张三",0));
+        console.log(searchArr.lastIndexOf(5));
+        console.clear(searchArr)
+    </script>
+
+    <script>
+        /**
+            StringObject.charAt(index)
+            返回指定下标的字符
+            StirngObject.charCodeAt(index)
+            返回指定下标的字符编码
+        */
+        let charAtArr = "张三李四";
+        //没有结果返回一个空的字符串
+        console.log(charAtArr.charAt(10));
+        console.log(charAtArr.charCodeAt(1));
+        //ECMAScript5之后可以使用中括号加字符直接获得指定下标的字符
+        console.log(charAtArr[1]);
+        console.clear(charAtArr);
+        /**
+            字符串对象截取方法
+            slice(start,end)
+            substring(start,end) 
+            substr(start,len) 第二个参数是截取的长度
+        */
+        //slice()
+        console.log(charAtArr.slice(0,2))
+        console.log(charAtArr.slice(2))
+        console.log(charAtArr.slice(-2))
+        console.log(charAtArr.slice(-4,-2))
+        console.clear(charAtArr)
+        
+        //substring(),自动将负数转换为0,将数值较小的那一个作为起始位置
+        console.log(charAtArr.substring(-1,2))//(0,2)
+        console.log(charAtArr.substring(-1,-2))//(0,0)
+        console.log(charAtArr.substring(-1,2))//(0,2)
+        //ECMAScript会自动进行转换,将数值较小的那一个作为起始位置
+        console.log(charAtArr.substring(1,-2))//(0,1)
+        console.clear(charAtArr)
+        
+        //substr(start,len),
+        console.log(charAtArr.substr(0,2))
+        console.log(charAtArr.substr(0,-1))
+        console.log(charAtArr.substr(-2,2))
+        console.clear(charAtArr)
+
+        //练习,获取文件后缀名
+        function getSuffix(fileName){
+            console.log(fileName.substr(fileName.lastIndexOf(".")));
+        }
+        getSuffix("nfidasfaoifjnasdln.avi")
+        console.clear(charAtArr)
+        
+        /**
+            stringObject.split(separator)
+            把一个字符串分割成字符串数组
+            返回值array
+            参数:分隔符
+        */
+        let str1 = "我-是-张三";
+        console.log(str1.split('-'))
+        console.clear(str1)
+        /**
+            stringObject.replace(regexp/substr,replacement)
+            参数:
+                regexp 必须.规定子字符串或要替换的模式的RegExp对象
+                replacement: 必须.一个字符串值
+            替换,只能替换第一个
+        */
+        console.log(str1.replace("-"," "))
+        console.clear(str1)
+    </script>
+    <script>
+        /**
+            toUpperCase()
+            toLowerCase()
+            将字符串border-left-color转换成borderLeftColor
+        */
+         let lowerArr = "hello world"
+         let upperArr = "HELLO WORLD"
+         console.log(lowerArr.toUpperCase())
+         console.log(upperArr.toLowerCase())
+        console.clear(lowerArr,upperArr)
+
+         //练习,将-命名规则的字符串,改为驼峰命名
+         function cameBack(str){
+             let returnStr =  "";
+             str.split('-').forEach(element => {
+                 returnStr === ""
+                    ? returnStr += element 
+                    : returnStr +=  element[0].toUpperCase()+ element.substr(1);
+             });
+             return returnStr;
+         }
+         console.log(cameBack("get-list-for-user"));
+
+
+    </script>
+</body>
+
+</html>
