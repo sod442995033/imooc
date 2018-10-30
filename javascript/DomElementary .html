@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .red{
+            color: #ff0000;
+        }
+        .blue{
+            color: #0000ff;
+        }
+        .bgcolor{
+            background: #ffff11;
+        }
+    </style>
+    <div class="box" id="box">
+        aaaa
+    </div>
+    <ul id="ul">
+        <li>张三</li>
+        <li>李四</li>
+        <li>王二</li>
+    </ul>
+    <ol id="ol" class = "red bgcolor">
+        <li id="firstId">张三</li>
+        <li>李四</li>
+        <li>王二</li>
+    </ol>
+    <script>
+         console.log(document.getElementById("box"));
+         console.log(document.getElementsByTagName("li").length);
+         console.log(document.getElementById("ol").getElementsByTagName("li").length);
+    </script>
+    <script>
+        /**
+            ele.style.styleName = styleValue
+            设置ele元素的css样式
+            1.ele为要设置样式的DOM对象
+            2.styleName为要设置的样式名称
+            3.styleValue为要设置的样式值
+        */
+        let box = document.getElementById("box")
+        box.style.color = "#f00";
+        //属性是复合形式,要使用驼峰形式
+        box.style.fontWeight = "100";
+
+        //dom数组设置css样式
+        let li = document.getElementById("ul").getElementsByTagName("li");            
+        for (let index = 0; index < li.length; index++) {
+            let element = li[index];
+            element.style.color = "#00f";
+        }
+    </script>
+    <script>
+        /**
+            innerHTML和className属性
+            ele.innerHTML 返回ele元素开始标签和结束标签之间的HTML
+            ele.innerHTML = "html" 设置ele元素开始标签和结束标签之间的HTML内容为html
+            ele.className 返回ele元素的class属性
+            ele.className = "font" 设置ele元素的class属性为font
+        */
+        let ol = document.getElementById("ol");
+        console.log(ul.innerHTML);
+        console.log(ul.innerHTML = "<h1>你好!</h1>");
+        console.log(ol.className);        
+        console.log(ol.className = "blue bgcolor");   
+        console.clear()
+    </script>   
+    <script>
+        /**
+            ele.getAttribute("attribute")
+            获取ele元素的attribute属性
+            ele.setAttribute("name",value)
+            设置ele元素的attribute属性
+            ele.removeAttribute("name")
+            删除ele元素的attribute属性
+        */
+        let olFirstLi = document.getElementById("firstId")
+        console.log(olFirstLi.getAttribute("id"));
+        //属性名编译器默认编译成全小写
+        console.log(olFirstLi.setAttribute("isRead",true))
+        console.log(olFirstLi.getAttribute("isRead"));
+        console.log(olFirstLi.removeAttribute("id"))
+    </script>
+</body>
+</html>

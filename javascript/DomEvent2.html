@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>onfocusAndOnblur</title>
+    <style>
+        .box{
+            padding: 50px;
+        }
+        .left,.tip{
+            float: left;
+        }
+        .left{
+            margin-right: 10px; 
+        }
+        .tip{
+            display: none;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let tip = document.getElementById("tip"), 
+                phone = document.getElementById("phone");
+           
+            //文本框绑定激活事件
+            phone.onfocus = function(){
+                tip.style.display = "block";
+            }
+            //文本框绑定失焦事件
+            phone.onblur = function(){
+                //value获取表单元素的值,所有表单元素都有该属性
+                let phoneValue = this.value;
+                phoneValue.length == 11 && !isNaN(phoneValue) 
+                ? tip.innerHTML = "<img src='image/选中.png'>" 
+                : tip.innerHTML = "<img src='image/关闭.png'>" 
+                }
+                tip.style.display = "none"
+            }
+
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">
+            <input type="text" id="phone" placeholder="请输入正确的手机号" />
+        </div>
+        <div class="tip" id="tip">
+            请输入正确的手机号
+        </div>
+    </div>
+</body>
+
+</html>

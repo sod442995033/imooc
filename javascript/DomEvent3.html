@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>onchange</title>
+    <script>
+        window.onload = function () {
+            let bgselect = document.getElementById("bgselect")
+            bgselect.onchange = function () {
+                // bgselect.style.backgroundColor = this.value
+                document.body.style.backgroundColor = this.value
+            }
+        }
+    </script>
+</head> 
+
+<body>
+    <select name="" id="bgselect">
+        <option value="" selected = "selected">请选择</option>
+        <option value="#f00">红色</option>
+        <option value="#0f0">绿色</option>
+        <option value="#00f">蓝色</option>
+        <option value="#ff0">黄色</option>
+        <option value="#ccc">灰色</option>
+    </select>
+</body>
+
+</html>

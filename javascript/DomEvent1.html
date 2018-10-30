@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //script放在head标签中时,需要使用onload,onload事件在页面全部加载完毕之后执行
+        window.onload = function () {
+            //获取box元素
+            let box = document.getElementById("box")
+            let clicked = function () {
+                alert("已触发按钮响应");
+            }
+            box.className = "btn ";
+            box.onclick = clicked;
+        }
+    </script>
+</head>
+<style>
+    .btn {
+        width: 140px;
+        height: 40px;
+        line-height: 30px;
+        background-color: #0000ff;
+        color: #ffffff;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 20px;
+        border: 1px;
+        cursor: "pointer";
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+
+    <div id="box" onmouseover="changeColor(this,'#000000')" onmouseout="changeColor(this,'#0000ff')">
+        我是按钮1号
+    </div>
+
+    <button class="btn" onmouseover="changeColor(this,'#000000')" onmouseout="changeColor(this,'#0000ff')">
+        登陆
+    </button>
+    <script>
+        /**
+                两种事件:
+                1.html事件
+                2.0级事件
+            */
+        function changeColor(ele, color) {
+            ele.style.backgroundColor = color;
+        };
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>
