@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mouseEvent</title>
+    <style>
+        body {
+            height: 1000px;
+        }
+
+        .box {
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box">
+        鼠标事件测试
+        <p>年后</p>
+        <p>年后</p>
+        <p>年后</p>
+        <p>年后</p>
+        <p>年后</p>
+        <p>年后</p>
+    </div>
+    <script>
+        //onmousedown和onmouseup实现了onclick
+        let box = document.getElementById("box")
+        //绑定按下的事件
+        box.onmousedown = function () {
+            console.log("鼠标按下触发")
+        }
+        //绑定移动的事件
+        box.onmousemove = function () {
+            console.log("鼠标移动触发")
+        }
+        //绑定松开的事件
+        box.onmouseup = function () {
+            console.log("鼠标松开触发")
+        }
+        //绑定点击的事件
+        box.onclick = function () {
+            console.log("鼠标点击事件")
+        }
+        //浏览器窗口改变的事件
+        window.onresize = function () {
+            console.log("窗口尺寸改变了")
+        }
+        //滚动条改变的触发的事件
+        window.onscroll = function () {
+            console.log("window滚动条移动了")
+        }
+        //绑定滚动条事件
+        box.onscroll = function(){
+            console.log("box滚动条移动了!")
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>window</title>
+    <script>
+        /**
+            window.open(pageURL,name,parameters)
+            打开一个新的浏览器窗口或查找一个已命名的的窗口
+            参数说明
+            pageURL: 子窗口路径
+            name: 子窗口句柄(name声明了新窗口的名称,方便后期通过name对子窗口进行引用)
+            paramters:窗口参数(各参数用逗号分割)
+                width:窗口宽度
+                height:窗口高度
+                left:窗口x轴坐标
+                top:窗口y轴坐标
+                toolbar:是否显示浏览器的工具栏
+                menubar:是否显示菜单栏
+                scrollbars:是否显示滚动条
+                location:是否显示地址字段
+                status:是否添加状态栏
+        */
+        window.onload = function () {
+            window.open("newwindow.html",
+                'newwindow',
+                `width=100px,height=100px,left=500px,top=400px,
+                toolbar=no,menubar=no,scrollbars=no,location=no,status=no`
+            )
+            let quit = document.getElementById("quit")
+            quit.onclick = function(){
+                window.close;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="quit">
+        退出
+    </button>
+</body>
+
+</html>

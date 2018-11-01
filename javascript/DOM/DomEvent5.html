@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>keyboardEvent</title>
+    <style>
+        .text 
+        span{
+            font-weight: bold;
+            color: #f00;
+        }
+        em{
+          font-style: normal;      
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="p" class="text">
+            还能够输入的字数:<span><em id="count">30</em>/30</span>
+        </p>
+        <div class="input">
+            <textarea name="" id="texts" cols="30" rows="10" placeholder="输入留言"></textarea>
+        </div>
+    </div>
+
+    <script>
+        /**
+            onkeydown:在用户按下一个键盘按键时触发
+            onkeypress:在键盘按键被按下,并释放一个键时发生
+            onkeyup:在键盘按键被松开时发生
+            keycode:返回onkeypress,onkeydown或onkeyup事件触发的键的值的字符代码,或键的代码
+        */
+        // document.onkeypress = function (event) {
+        //     console.log(event.keyCode);
+        // }
+        
+        let texts = document.getElementById("texts")
+        let count = document.getElementById("count")
+        let total = 30;
+        texts.onkeyup = function(event){
+            let length = this.value.length
+            let allow = total - length
+            count.innerHTML=allow
+        } 
+        
+    </script>
+</body>
+</html>

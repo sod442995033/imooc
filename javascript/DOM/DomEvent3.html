@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>onchange</title>
-    <script>
+    <!-- <script>
         window.onload = function () {
             let bgselect = document.getElementById("bgselect")
             bgselect.onchange = function () {
@@ -14,12 +14,23 @@
                 document.body.style.backgroundColor = this.value
             }
         }
+    </script> -->
+    <script>
+        window.onload = function () {
+            let menu = document.getElementById("bgselect")
+            menu.onchange = function () {
+                let bgcolor = menu.options[menu.selectedIndex].value;
+                bgcolor == "" ?
+                    document.body.style.backgroundColor = "" :
+                    document.body.style.backgroundColor = bgcolor
+            }
+        }
     </script>
-</head> 
+</head>
 
 <body>
     <select name="" id="bgselect">
-        <option value="" selected = "selected">请选择</option>
+        <option value="" selected="selected">请选择</option>
         <option value="#f00">红色</option>
         <option value="#0f0">绿色</option>
         <option value="#00f">蓝色</option>

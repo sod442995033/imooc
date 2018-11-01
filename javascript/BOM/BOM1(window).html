@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM(brower object model)</title>
+    <script>
+        /**
+            BOM中提供的对象,
+                window :浏览器的一个实例,global全局对象,所有的全局变量都被归在window上
+                navigator
+                screen
+                history
+                location
+                document
+                event
+        */
+
+        //window,window对象可以被隐藏,像java中的lang包一样,已经默认导入了
+        var notify = "hello world!"
+        var notifyMethod = function (mes) {
+            //window对象已经被隐藏
+            window.alert(mes + window.notify)
+        }
+        // window.notifyMethod("哦哈呦!")
+        
+        //window.alert(),window.confirm()  
+        window.onload = function () {
+           
+            let delBtn = window.document.getElementById("delBtn")
+            delBtn.onclick = function () {
+                let result = window.confirm("您确定要删除吗?")
+                result ? delBtn.parentElement.style.display = "none" : false;
+            }
+        }
+        /**
+            window.prompt("text","defaultText")
+            返回值:如果用户单击提示框的取消按钮,则返回null
+            如果用户单击确认按钮,则返回输入字段当前显示的文本
+        */
+        var prompt = window.prompt("这是一段可以修改的纯文本","<p>没错</p>")
+        console.log(prompt)
+
+    </script>
+</head>
+
+<body>
+    <div>
+        你想删除我?
+        <button id="delBtn">没错!删除!</div>
+    </div>
+</body>
+
+</html>
