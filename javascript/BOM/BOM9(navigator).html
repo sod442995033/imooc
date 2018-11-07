@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Navigator</title>
+</head>
+<body>
+    <script>
+        /**
+            Navigator对象用来获取浏览器及系统的信息
+            userAgent: 
+                用来识别浏览器名称,版本,引擎以及操作系统等信息的内容                
+                判断浏览器的类型,判断设备是终端是移动还是PC
+            appCodeName:获取浏览器的名称
+            appName:获取浏览器的全部名称
+        */
+        console.log(navigator.userAgent)
+        console.log(navigator.appCodeName)
+        console.log(navigator.appName)
+        window.onload = ()=>{
+            let browser = "";
+            let mess = navigator.userAgent.toLocaleLowerCase()
+            if(mess.indexOf("msie")>-1){
+                browser = "IE"
+            }
+            if(mess.indexOf("chrome")>-1){
+                browser = "chrome"
+            }
+            if(mess.indexOf("opera")>-1){
+                browser = "opera"
+            }
+            if(mess.indexOf("firefox")>-1){
+                browser = "firefox"
+            }
+          
+            alert("您当前使用的是" + browser + "浏览器")
+        }
+    </script>
+</body>
+</html>

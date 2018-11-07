@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>location</title>
+    <script>
+        /** 
+            location对象
+            提供了与当前窗口中加载的文档有关的信息,还提供了一些导航的功能
+            它既是window对象的属性,也时document对象的属性
+                1.语法:location.href
+                功能:返回当前加载页面的完整URL
+                说明:location.href与window.location.href等价
+                2.语法:location.hash
+                功能:返回URL中的hash(#号后跟零或多个字符),如果不包含则返回空字符串
+        */
+        console.log(window.location.href)
+        console.log(window.location.hash)
+        window.onload = () => {
+            let btn = window.document.getElementById("btn")
+            btn.onclick = () => {
+                //去找id为top的元素,这个div在上边,自然就会到顶部
+                window.location.hash = "#top"
+            }
+        }
+    </script>
+    <style>
+        .div1 {
+            height: 500px;
+            background-color: brown;
+        }
+
+        .div2 {
+            height: 500px;
+            background-color: #666666;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="BOM5(location).html">去BOM5.html</a>
+    <div id="top" class="div1"></div>
+    <div class="div2"></div>
+    <input type="button" id="btn"  value="返回顶部">
+
+</body>
+
+</html>

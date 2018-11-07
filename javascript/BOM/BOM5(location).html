@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>location</title>
+</head>
+
+<body>
+
+    <script>
+        /** 
+            location.host
+            返回服务器的名称和端口号(如果有)
+            location.hostname
+            返回不带端口号的服务器名称
+            location.pathname
+            返回URL中的目录和(或)文件名
+        */ 
+        console.log(window.location.host)
+        console.log(window.location.hostname)
+        console.log(window.location.pathname)
+        /**  
+            location.port
+            返回url中指定的端口号,如果没有返回空字符串
+            location.protocol
+            返回页面使用的协议
+            location.search
+            返回URL查询字符串.这个字符串以?号开头
+        */
+        console.log(window.location.port)
+        console.log(window.location.protocol)
+        console.log(window.location.search)
+        /**
+                两秒钟后跳到BOM4(location).html中
+                浏览器中会有历史记录,可以返回前一个页面
+                使用location.replace(url)方法重定向url,不会在历史记录中生成新记录
+        */
+        // let replaceURL = window.setTimeout(()=>{
+            // window.location = "BOM4(location).html"
+            // location.href = "BOM4(location).html"
+            // location.replace("BOM4(location).html")
+        // },2000)
+        /** 
+            location.reload()
+            重新加载当前显示的页面,建议放在页面最下方,因为有可能导致代码加载失败
+            location.reload(): 有可能从缓存中加载
+            location.reload(true): 从服务器重新加载 
+        */
+        window.onload = () => {
+            document.getElementById("btn").onclick = () => {
+                location.reload(true)
+            }
+        }
+    </script>
+    <input type="button" id="btn" value="刷新页面">
+    <a href="BOM6(history).html">去BOM6.html</a>
+</body>
+
+</html>
