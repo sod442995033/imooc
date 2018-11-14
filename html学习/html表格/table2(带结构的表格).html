@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>带结构的表格,表格属性</title>
+</head>
+<body>
+     <!--
+        表格操作2(带结构的表格) 
+            html中浏览器解析表格是全部一起解析,解析完毕才会显示,
+            如果表格非常复杂会影响用户体验,需要使用结构化表格,加载一部分显示一部分
+            表格划分的三部分:表头,主体,脚注
+                thead:表格的头(标题之类的内容)
+                tbody:表格的主体(放数据主体)
+                tfoot:表格的脚(放表格的脚注)
+    -->
+    <table border="1" width="500px">
+            <!-- 表格标题,居中显示,只能放在table标签的下边 -->
+            <caption>前端工程师平均工资</caption>
+            <thead>
+                <tr>
+                    <th>城市</th>
+                    <th>2014年</th>
+                    <th>2014年</th>
+                    <th>2015年</th>
+                    <th>2016年</th>
+                </tr>
+                <tr>
+                    <th>城市</th>
+                    <th>上半年</th>
+                    <th>下半年</th>
+                    <th>2015年</th>
+                    <th>2016年</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>北京</td>
+                    <td>8000</td>
+                    <td>9000</td>
+                    <td>10000</td>
+                    <td>12000</td>
+                </tr>
+                <tr>
+                    <td>上海</td>
+                    <td>6000</td>
+                    <td>7000</td>
+                    <td>8000</td>
+                    <td>10000</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>合计</td>
+                    <td>7000</td>
+                    <td>8000</td>
+                    <td>9000</td>
+                    <td>11000</td>
+                </tr>
+            </tfoot>
+        </table>
+        <hr>
+       
+</body>
+</html>
