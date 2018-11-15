@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单</title>
+</head>
+
+<body>
+    <form action="#">
+        <table>
+            <thead>
+                注册信息
+            </thead>
+            <tbody>
+                <tr>
+                    <td>姓名</td>
+                    <td><input type="text" maxlength="3" size="100" placeholder="请输入姓名"></td>
+                </tr>
+                <tr>
+                    <td>邮箱</td>
+                    <td><input type="text" maxlength="100" placeholder="请输入邮箱"></td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td><input type="password" placeholder="请输入密码"></td>
+                </tr>
+                <tr>
+                    <td>确认密码</td>
+                    <td><input type="password" placeholder="再次输入密码"></td>
+                </tr>
+                <tr>
+                    <td>上传照片</td>
+                    <td><input type="file" placeholder="上传照片"></td>
+                </tr>
+                <tr>
+                    <td>性别</td>
+                    <td>
+                        <input type="radio" name="sex" id="" placeholder="男">男
+                        <input type="radio" name="sex" id="" placeholder="女">女
+                    </td>
+                </tr>
+                <tr>
+                    <td>爱好</td>
+                    <td>
+                        <input type="checkbox" name="read" id="" placeholder="读书">读书
+                        <input type="checkbox" name="dance" id="" placeholder="跳舞">跳舞
+                        <input type="checkbox" name="sing" id="" placeholder="唱歌">唱歌
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>城市</td>
+                    <td>
+                        <select name="" id="">
+                            <optgroup label="山西">
+                                <option value="chose">----请选择----</option>
+                                <option value="晋城">晋城</option>
+                                <option value="长治">长治</option>
+                                <option value="太原">太原</option>
+                                <option value="大同">大同</option>
+                            </optgroup>
+                            <optgroup label="四川">
+                                <option value="成都">成都</option>
+                                <option value="绵阳">绵阳</option>
+                                <option value="乐山">乐山</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>城市</td>
+                    <td>
+                        <select name="" id="" size="3" multiple>
+                            <option value="运城">运城</option>
+                            <option value="晋城">晋城</option>
+                            <option value="长治">长治</option>
+                            <option value="太原">太原</option>
+                            <option value="大同">大同</option>
+                            <option value="成都">成都</option>
+                            <option value="绵阳">绵阳</option>
+                            <option value="乐山">乐山</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>城市</td>
+                    <td>
+                        <select name="" id="">
+                            <option value="chose" selected>----请选择----</option>
+                            <option value="运城">运城</option>
+                            <option value="晋城">晋城</option>
+                            <option value="长治">长治</option>
+                            <option value="太原">太原</option>
+                            <option value="大同">大同</option>
+                            <option value="成都">成都</option>
+                            <option value="绵阳">绵阳</option>
+                            <option value="乐山">乐山</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>城市</td>
+                    <td>
+                        <select name="" id="">
+                            <option value="chose" selected>----请选择----</option>
+                            <option value="运城">运城</option>
+                            <option value="晋城">晋城</option>
+                            <option value="长治">长治</option>
+                            <option value="太原">太原</option>
+                            <option value="大同">大同</option>
+                            <option value="成都">成都</option>
+                            <option value="绵阳">绵阳</option>
+                            <option value="乐山">乐山</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>内容</td>
+                    <td>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="尼莫别"></textarea>
+                    </td>
+                </tr>
+             
+                <tr>
+                    <td width="100px">html5新标签</td>
+                    <td>
+                        <input type="search" placeholder="search" name="" id="">
+                        <input type="date" placeholder="date" name="" id="">
+                        <input type="datetime" placeholder="datetime" name="" id="">
+                        <input type="datetime-local" placeholder="datetime-local" name="" id="">
+                        <input type="email" placeholder="email" name="" id="">
+                        <input type="url" placeholder="url" name="" id="">
+                        <input type="number" placeholder="number" max="20" min="10" step="2" value="11">
+                        <input type="range" placeholder="range" max="20" min="10" step="2" value="11">
+                        <input type="month" placeholder="month" name="" id="">
+                        <input type="week" placeholder="week" name="" id="">
+                        <input type="color" placeholder="color" name="" id="">
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" value="来点我" placeholder="来点我">
+                        <input type="submit" value="提交" placeholder="提交">
+                        <input type="reset" value="重置" placeholder="重置">
+                        <!-- 功能与submit相同 -->
+                        <input type="image" src="../../javascript学习/image/提交.png" alt="失败">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</body>
+
+</html>

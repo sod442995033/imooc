@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>页面结构的排版布局</title>
+    <title>页面结构的排版布局(使用table进行页面布局)</title>
 </head>
+
 <body>
-    
+    <!-- 
+        增加代码维护成本
+        尽量少的使用表格嵌套
+        尽量少的使用跨行跨列
+     -->
+    <table bgcolor="#f2f2f2" width="100%">
+        <!-- 页头 -->
+        <tr height="20%" bgcolor="#14191e">
+            <td>
+                这里是页头没有错
+            </td>
+        </tr>
+        <!-- 内容 -->
+        <tr>
+            <td>这里是第一行内容</td>
+        </tr>
+        <tr>
+            <td>这里是第二行内容</td>
+        </tr>
+        <!-- 页尾 -->
+        <tr height="20%" bgcolor="#14191e">
+            <td>
+                这里是页尾灭有错
+            </td>
+        </tr>
+    </table>
 </body>
+
 </html>
